@@ -4,6 +4,12 @@
 	<title>TODO-List</title>
 </head>
 <body>
-		<h1>It's a <%= kindOfDay %></h1>
+
+	<!-- scriplet tag -->
+	<% if(kindOfDay=="Thursday"){ %>
+		<h1 style="color: purple">It's a <%= kindOfDay %> Todo List</h1>
+	<%} else{ %>
+		<h2 style="color: lime">It's a <%= kindOfDay %> Todo List</h2>
+	<% } %>
 </body>
 </html>
