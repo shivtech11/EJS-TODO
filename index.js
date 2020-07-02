@@ -3,20 +3,25 @@ const express = require("express");
 
 const app = express();
 
-
+// setting the ejs engine for handling ejs tempelatesa
+app.set('view engine','ejs');
 
 app.get("/", function (req,res) {
 	
 	var today = new Date();
 	var currentDay = today.getDay();
+	var day=""
 
 	if(currentDay ===6 || currentDay === 0){
-		res.sendFile(__dirname+"/weakend.html");
+		day="weakend";
 	}else{
-		res.sendFile(__dirname+"/weakday.html")
+		day="weakday";
 	}
+
+//sending the data to the ejs file
+	res.render("list",{kindOfDay:day});
 });
 
-app.listen(3000,function (req,res) {
+app.listen(3000,function () {
 	console.log("localhost 3000");
 });
