@@ -2,6 +2,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+//adding local modules
+const date = require(__dirname+"/date.js");
+
 const app = express();
 
 // setting the ejs engine for handling ejs tempelatesa
@@ -20,12 +23,7 @@ var items=["Buy food","Cook Food","Eat Food"];
 
 app.get("/", function (req,res) {
 	
-	var today = new Date();
-	var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-	//console.log(today.toLocaleDateString("en-US", options));
-	var day = today.toLocaleDateString("en-US", options);
-
+	let day = date.getDate();
 
 //sending the data to the ejs file
 	//res.render("list",{kindOfDay:day});
