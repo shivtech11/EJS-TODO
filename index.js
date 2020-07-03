@@ -15,14 +15,14 @@ var items=["Buy food","Cook Food","Eat Food"];
 var workItems=[];
 
 app.get("/", function (req,res) {
-	let day = date.getDay();
+	let day = date.getDate();
   res.render("list",{listTitle:day,newListItem:items});
 });
 
 
 app.post("/",function (req,res) {
   item = req.body.newItem; 
-  
+
 	if(req.body.button==="Work"){
 		workItems.push(item);
 		res.redirect("/work");
