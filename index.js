@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("public"));
 
 
-var items=["Buy food","Cook Food","Eat Food"];
-var workItems=[];
+const items=["Buy food","Cook Food","Eat Food"];
+const workItems=[];
 
 app.get("/", function (req,res) {
-	let day = date.getDate();
+	const day = date.getDate();
   res.render("list",{listTitle:day,newListItem:items});
 });
 
