@@ -10,6 +10,9 @@ app.set('view engine','ejs');
 //using body-parser in our app
 app.use(bodyParser.urlencoded({extended:true}))
 
+//adding css or js like static files from public folder
+app.use(express.static("public"));
+
 
 //declaring global variable
 //var item="" it is useless,so array make
