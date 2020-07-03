@@ -68,6 +68,10 @@ app.get("/work", function(req,res) {
 	res.render("list",{listTitle:"Work",newListItems:workItems});
 });
 
+app.get("/about", function(req,res) {
+	res.render("about");
+});
+
 app.listen(3000,function () {
 	console.log("localhost 3000");
 });
